@@ -28,7 +28,7 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
       display: "flex",
       justifyContent: "center"
     }}>
-      <img src={"/images/" + problem.imagine} style={{
+      <img src={problem.imagine} style={{
         maxWidth: "400px",
         maxHeight: "300px",
       }} />
