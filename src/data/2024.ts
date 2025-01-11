@@ -21,10 +21,10 @@ const editia_2024: EditionType = {
     probleme: [problema_1],
     pdf_etapa_1_link: "./pdfs/2024-rame-pane.pdf",
     pdf_etapa_2_link: [
-      "pdfs/2024-rame-pane.pdf",
-      "pdfs/2024-rame-pane.pdf",
-      "pdfs/2024-rame-pane.pdf",
-      "pdfs/2024-rame-pane.pdf"
+      "./pdfs/2024-rame-pane.pdf",
+      "./pdfs/2024-rame-pane.pdf",
+      "./pdfs/2024-rame-pane.pdf",
+      "./pdfs/2024-rame-pane.pdf"
     ]
 }
 
