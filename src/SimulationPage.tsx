@@ -83,6 +83,8 @@ const SimulationPage = () => {
             const editionName = e.target.value
             const edition = allEditions.find(edition => edition.name === editionName)
             if (edition) {
+              setActiveProblem(undefined)
+              restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
               setEdition(edition)
             }
           }}
