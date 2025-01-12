@@ -5,23 +5,27 @@ import { ProblemViewer } from './ProblemViewer'
 import { useTimer } from 'react-timer-hook'
 import { ProblemaType } from './types'
 
-const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]) => {
-  let score = 0
+const ScoreOfProblem = (problem: ProblemaType): number => {
+  if (problem.dificultate === "usor") {
+    return 2
+  }
+  else if (problem.dificultate === "mediu") {
+    return 3
+  }
+  else {
+    return 5
+  }
+}
+
+const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): string => {
+  let score = 0, total_score = 0
   for (let i = 0; i < problems.length; i++) {
     if (problemAnswers[i] == problems[i].raspuns) {
-      if (problems[i].dificultate === "usor") {
-        score += 2
-      }
-      else if (problems[i].dificultate === "mediu") {
-        score += 3
-      }
-      else if (problems[i].dificultate === "greu") {
-        score += 5
-      }
-      // TODO: verify
+      score += ScoreOfProblem(problems[i])
     }
+    total_score += ScoreOfProblem(problems[i])
   }
-  return score
+  return `${score} / ${total_score}`
 }
 
 const SimulationPage = () => {
@@ -138,7 +142,7 @@ const SimulationPage = () => {
             </p>
           }
           {!isRunning && <p style={{ margin: 0 }}>Timpul a expirat!</p>}
-          {!isRunning && <p style={{ margin: 0 }}>Scor: <strong>{ComputeScore(problemAnswers, problems)}/50</strong></p>}
+          {!isRunning && <p style={{ margin: 0 }}>Scor: <strong>{ComputeScore(problemAnswers, problems)}</strong></p>}
         </div>
       </div>
 

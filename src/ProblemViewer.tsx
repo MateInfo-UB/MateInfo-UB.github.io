@@ -21,7 +21,7 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
     }}
     data-color-mode="light"
   >
-    <H3 style={{ textAlign: "center" }}>{problem.titlu}</H3>
+    <H3 style={{ textAlign: "center" }}>{problem.titlu} ({problem.dificultate})</H3>
     {problem.enunt_markdown &&
       <MarkdownPreview source={problem.enunt_markdown} style={{ padding: 16 }} />}
     {problem.imagine && <div style={{
@@ -45,6 +45,8 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
       flexDirection: "row",
       padding: "10px",
       paddingTop: "0",
+      flexWrap: "wrap",
+      justifyContent: "center",
     }}>
       {problem.variante.map((varianta) => {
         return <Radio
