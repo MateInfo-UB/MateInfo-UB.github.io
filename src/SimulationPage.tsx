@@ -81,8 +81,11 @@ const SimulationPage = () => {
             if (edition) {
               setEdition(edition)
             }
-          }
-          }>
+          }}
+          style={{
+            width: "40%"
+          }}
+        >
           {allEditions.map(edition => <option value={edition.name} key={edition.name}>{edition.name}</option>)}
         </select>
         <Button onClick={() => {
