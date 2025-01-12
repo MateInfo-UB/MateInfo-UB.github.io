@@ -89,7 +89,8 @@ const SimulationPage = () => {
             }
           }}
           style={{
-            width: "40%"
+            width: "40%",
+            minWidth: "150px",
           }}
         >
           {allEditions.map(edition => <option value={edition.name} key={edition.name}>{edition.name}</option>)}
