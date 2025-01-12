@@ -19,12 +19,12 @@ Care este numărul minim de poduri ce trebuie construite astfel încât un turis
 const editia_2024: EditionType = {
     name: "Ediția 2024",
     probleme: [problema_1],
-    pdf_etapa_1_link: "./pdfs/2024-rame-pane.pdf",
+    pdf_etapa_1_link: "./pdfs/2024-etapa-I.pdf",
     pdf_etapa_2_link: [
       "./pdfs/2024-rame-pane.pdf",
-      "./pdfs/2024-rame-pane.pdf",
-      "./pdfs/2024-rame-pane.pdf",
-      "./pdfs/2024-rame-pane.pdf"
+      "./pdfs/2024-racituri-cu-pireu.pdf",
+      "./pdfs/2024-prajitura-cu-mujdei.pdf",
+      "./pdfs/2024-cornisoni-afumati.pdf"
     ]
 }
 
