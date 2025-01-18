@@ -16,7 +16,7 @@ const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): strin
   return `${score} / ${total_score}`
 }
 
-const contestDurationInSeconds = 1
+const contestDurationInSeconds = 2 * 60 * 60
 
 const SimulationPage = () => {
   const allEditions = editii
