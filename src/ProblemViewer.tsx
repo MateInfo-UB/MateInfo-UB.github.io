@@ -16,11 +16,12 @@ interface ProblemViewerProps {
 const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode }: ProblemViewerProps) => {
   return <div
     style={{
-      height: "100%",
+      // height: "100%",
       width: "100%",
       padding: "50px",
-      paddingTop: "10px",
-      overflow: "auto",
+      paddingTop: "30px",
+      paddingBottom: "30px",
+      // overflow: "auto",
     }}
     data-color-mode="light"
   >

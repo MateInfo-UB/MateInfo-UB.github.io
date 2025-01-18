@@ -197,6 +197,7 @@ const SimulationPage = () => {
         marginLeft: "10px",
         backgroundColor: "rgba(255, 255, 255, 0.8)",
         overflow: "auto",
+        padding: 0
       }}
       elevation={3}
     >
