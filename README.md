@@ -28,8 +28,11 @@ Locații importante:
 ## Dezvoltare
 
 Pentru a rula aplicația în modul de dezvoltare, rulați `npm i` urmat de `npm run dev`.
-
 Pentru a construi aplicația pentru producție, rulați `npm run build`.
+
+## Publicare
+
+Pentru a publica aplicația, este suficient sa dați push la cod pe branch-ul `master`. Github Pages va prelua automat modificările și va publica aplicația.
 
 ## Elemente Markdown
 

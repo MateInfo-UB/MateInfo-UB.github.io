@@ -20,7 +20,7 @@ const contestDurationInSeconds = 2 * 60 * 60
 
 const SimulationPage = () => {
   const allEditions = editii
-  const [edition, setEdition] = useState(allEditions[allEditions.length - 1])
+  const [edition, setEdition] = useState(allEditions[0])
   const [problemAnswers, setProblemAnswers] = useState<string[]>([])
   const [activeProblem, setActiveProblem] = useState<number | undefined>(undefined)
   const {
@@ -29,9 +29,12 @@ const SimulationPage = () => {
     minutes,
     hours,
     isRunning,
-    restart
+    restart,
+    pause,
+    resume
   } = useTimer({ expiryTimestamp: new Date((new Date).getTime() + contestDurationInSeconds * 1000), autoStart: true });
 
+  const timerIsFinished = totalSeconds === 0
   const problems = edition.probleme
 
   useEffect(() => {
@@ -60,36 +63,66 @@ const SimulationPage = () => {
         paddingBottom: "15px",
         position: "relative",
       }}>
+      <select
+        value={edition.name}
+        onChange={(e) => {
+          const editionName = e.target.value
+          const edition = allEditions.find(edition => edition.name === editionName)
+          if (edition) {
+            console.log("Tring to set edition", edition)
+            setActiveProblem(undefined)
+            setEdition(edition)
+            restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
+          }
+        }}
+        style={{
+          width: "100%",
+          minWidth: "150px",
+          marginBottom: "10px",
+        }}
+      >
+        {allEditions.map(edition => <option value={edition.name} key={edition.name}>{edition.name}</option>)}
+      </select>
       <div style={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingBottom: "10px",
+        marginBottom: "10px",
       }}>
-        <select
-          value={edition.name}
-          onChange={(e) => {
-            const editionName = e.target.value
-            const edition = allEditions.find(edition => edition.name === editionName)
-            if (edition) {
-              console.log("Tring to set edition", edition)
-              setActiveProblem(undefined)
-              setEdition(edition)
-              restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
+        <Button
+          onClick={() => {
+            if (isRunning) {
+              pause()
+            } else {
+              resume()
             }
           }}
           style={{
-            width: "40%",
-            minWidth: "150px",
+            width: "30%"
           }}
-        >
-          {allEditions.map(edition => <option value={edition.name} key={edition.name}>{edition.name}</option>)}
-        </select>
-        <Button onClick={() => {
-          setActiveProblem(undefined)
-          setProblemAnswers(problems.map(() => ""))
-          restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
-        }}>Resetează</Button>
+          disabled={timerIsFinished}
+        >{(timerIsFinished || isRunning) ? 'Pauză' : 'Reluare'}</Button>
+
+        <Button
+          onClick={() => {
+            restart(new Date((new Date).getTime()))
+          }}
+          style={{
+            width: "30%"
+          }}
+        >Oprește</Button>
+
+        <Button
+          onClick={() => {
+            setActiveProblem(undefined)
+            setProblemAnswers(problems.map(() => ""))
+            restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
+          }}
+          style={{
+            width: "30%"
+          }}
+          intent='danger'
+        >Reîncepe</Button>
       </div>
 
       <div style={{
@@ -105,7 +138,7 @@ const SimulationPage = () => {
             key={problem.titlu}
             onClick={() => setActiveProblem(index)}
             active={activeProblem === index}
-            intent={problemAnswers[index] === "" ? "none" : (isRunning ? "primary" : (problemAnswers[index] == problem.raspuns ? "success" : "danger"))}
+            intent={problemAnswers[index] === "" ? "none" : (!timerIsFinished ? "primary" : (problemAnswers[index] == problem.raspuns ? "success" : "danger"))}
             style={{
               width: "100%",
               textAlign: "left",
@@ -123,20 +156,22 @@ const SimulationPage = () => {
         <div style={{
           textAlign: "center",
           fontSize: "20px",
-          paddingBottom: "-10px"
+          paddingBottom: "-10px",
+          display: "flex",
+          justifyContent: "center",
         }}>
-          {isRunning &&
+          {!timerIsFinished && <div>
             <p style={{ margin: 0 }}>
               Timp scurs: <strong>{hoursPassed.toString().padStart(2, '0')}:{minutesPassed.toString().padStart(2, '0')}:{secondsPassed.toString().padStart(2, '0')}</strong>
             </p>
-          }
-          {isRunning &&
             <p style={{ margin: 0 }}>
               Timp rămas: <strong>{hours.toString().padStart(2, '0')}:{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</strong>
             </p>
-          }
-          {!isRunning && <p style={{ margin: 0 }}>Timpul a expirat!</p>}
-          {!isRunning && <p style={{ margin: 0 }}>Scor: <strong>{ComputeScore(problemAnswers, problems)}</strong></p>}
+          </div>}
+          {timerIsFinished && <div>
+            <p style={{ margin: 0 }}>Timpul a expirat!</p>
+            <p style={{ margin: 0 }}>Scor: <strong>{ComputeScore(problemAnswers, problems)}</strong></p>
+          </div>}
         </div>
       </div>
 
@@ -147,9 +182,10 @@ const SimulationPage = () => {
         right: 0,
       }}>
         <ProgressBar
-          animate
+          animate={isRunning}
           stripes
           value={totalSeconds / contestDurationInSeconds}
+          intent='primary'
         />
       </div>
     </Card>
@@ -167,7 +203,7 @@ const SimulationPage = () => {
       {activeProblem === undefined && <NonIdealState title="Selectează o problemă" icon="add" iconSize={NonIdealStateIconSize.SMALL} />}
       {activeProblem !== undefined &&
         <ProblemViewer
-          isInReviewMode={!isRunning}
+          isInReviewMode={timerIsFinished}
           pickedAnswer={problemAnswers[activeProblem]}
           setPickedAnswer={(answer) => {
             const newAnswers = [...problemAnswers]

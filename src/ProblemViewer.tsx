@@ -81,7 +81,7 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
           value={varianta.toString()}
           label={varianta.toString() + (isInReviewMode && varianta.toString() === problem.raspuns.toString() ? " (corect)" : "")}
           onClick={() => setPickedAnswer(varianta.toString())}
-          disabled={isInReviewMode}
+          // disabled={isInReviewMode}
           checked={pickedAnswer === varianta.toString()}
           style={{ paddingLeft: "30px", paddingRight: "30px" }}
         />

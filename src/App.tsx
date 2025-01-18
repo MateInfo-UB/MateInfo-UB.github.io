@@ -105,7 +105,6 @@ function App() {
               className="bp5-minimal"
               icon="bug"
               text="Raportează o Problemă"
-              active={activeTab === 'etapa-II'}
               style={{ marginLeft: "10px" }}
               onClick={() => window.open('https://github.com/MateInfo-UB/Simulari-Etapa-I/issues/new', '_blank')!.focus()}
             />
