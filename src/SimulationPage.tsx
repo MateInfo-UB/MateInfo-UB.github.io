@@ -20,7 +20,7 @@ const contestDurationInSeconds = 1
 
 const SimulationPage = () => {
   const allEditions = editii
-  const [edition, setEdition] = useState(allEditions[allEditions.length - 3])
+  const [edition, setEdition] = useState(allEditions[allEditions.length - 1])
   const [problemAnswers, setProblemAnswers] = useState<string[]>([])
   const [activeProblem, setActiveProblem] = useState<number | undefined>(undefined)
   const {

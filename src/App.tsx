@@ -47,7 +47,7 @@ function Home({ setTab }: { setTab: (tab: "simulari" | "etapa-I" | "etapa-II") =
 
 function App() {
   const [animationsEnabled, setAnimationsEnabled] = useState<boolean>(window.localStorage.getItem('animationsDisabled') == 'true' ? false : true)
-  const [activeTab, setActiveTab] = useState<"home" | "simulari" | "etapa-I" | "etapa-II">('simulari')
+  const [activeTab, setActiveTab] = useState<"home" | "simulari" | "etapa-I" | "etapa-II">('home')
 
   return (
     <div style={{ "height": "100vh", "display": "flex", "flexDirection": "column", overflow: "hidden" }}>

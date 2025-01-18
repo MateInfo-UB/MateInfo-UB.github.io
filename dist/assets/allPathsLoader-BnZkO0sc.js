@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./allPaths-bJLHGQm6.js","./index-DBrX4SuH.js","./index-DeDKg4Un.js","./index-KhVjcC94.js","./index-Ncdw7Wpz.css"])))=>i.map(i=>d[i]);
+import{_ as a,a as i,b as o}from"./index-KhVjcC94.js";var s=function(n,r){return a(void 0,void 0,void 0,function(){var e;return i(this,function(t){switch(t.label){case 0:return[4,o(()=>import("./allPaths-bJLHGQm6.js"),__vite__mapDeps([0,1,2,3,4]),import.meta.url)];case 1:return e=t.sent().getIconPaths,[2,e(n,r)]}})})};export{s as allPathsLoader};
