@@ -1,6 +1,9 @@
 import { H3, Radio } from '@blueprintjs/core'
-import { ProblemaType } from './types'
+import { ProblemaType, ScoreOfProblem } from './types'
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import katex from 'katex';
+import 'katex/dist/katex.css';
+import { getCodeString } from 'rehype-rewrite';
 
 interface ProblemViewerProps {
   problem: ProblemaType,
@@ -21,9 +24,33 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
     }}
     data-color-mode="light"
   >
-    <H3 style={{ textAlign: "center" }}>{problem.titlu} ({problem.dificultate})</H3>
-    {problem.enunt_markdown &&
-      <MarkdownPreview source={problem.enunt_markdown} style={{ padding: 16 }} />}
+    <H3 style={{ textAlign: "center" }}>{problem.titlu} ({problem.dificultate} - {ScoreOfProblem(problem)} puncte)</H3>
+    <MarkdownPreview source={problem.enunt_markdown} style={{ padding: 16 }}
+      components={{
+        code: ({ children = [], className, ...props }) => {
+          if (typeof children === 'string' && /^\$\$(.*)\$\$/.test(children)) {
+            const html = katex.renderToString(children.replace(/^\$\$(.*)\$\$/, '$1'), {
+              throwOnError: false,
+            });
+            return <code dangerouslySetInnerHTML={{ __html: html }} style={{ background: 'transparent' }} />;
+          }
+          const code = props.node && props.node.children ? getCodeString(props.node.children) : children;
+          if (
+            typeof code === 'string' &&
+            typeof className === 'string' &&
+            /^language-katex/.test(className.toLocaleLowerCase())
+          ) {
+            const html = katex.renderToString(code, {
+              throwOnError: false,
+            });
+            return <code style={{
+              fontSize: '100%', textAlign: 'center'
+            }} dangerouslySetInnerHTML={{ __html: html }} />;
+          }
+          return <code className={String(className)}>{children}</code>;
+        },
+      }}
+    />
     {problem.imagine && <div style={{
       display: "flex",
       justifyContent: "center"

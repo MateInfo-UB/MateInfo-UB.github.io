@@ -80,7 +80,7 @@ Cât durează cel mai rapid traseu de la orașul 12 la orașul 72?
 };
 
 const problema_7: ProblemaType = {
-    titlu: "Matrice pătratică",
+    titlu: "Matrice pătratică??",
     enunt_markdown: `
 Fie o matrice pătratică de dimensiune 2022 ce conține valori de 1 și 0, astfel încât există exact o valoare egală cu 1 pe fiecare linie și pe fiecare coloană. În matrice este permisă interschimbarea a două valori din celule vecine pe verticală sau pe orizontală (considerăm că două celule sunt vecine dacă au o latură comună). Considerând toate matricele cu o asemenea proprietate, care este numărul minim de interschimbări necesare pentru a aduce toate valorile de 1 pe aceeași linie sau pe aceeași coloană?
 `,
@@ -188,7 +188,7 @@ Pentru care din următoarele valori ale lui $n$ există o alegere de semne plus/
 };
 
 const problema_16: ProblemaType = {
-    titlu: "Funcție",
+    titlu: "Funcție??",
     enunt_markdown: `
 Se consideră funcția:
 

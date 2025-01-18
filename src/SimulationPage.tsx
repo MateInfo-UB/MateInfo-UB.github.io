@@ -3,19 +3,7 @@ import { Button, Card, NonIdealState, NonIdealStateIconSize, ProgressBar } from 
 import { editii } from './data'
 import { ProblemViewer } from './ProblemViewer'
 import { useTimer } from 'react-timer-hook'
-import { ProblemaType } from './types'
-
-const ScoreOfProblem = (problem: ProblemaType): number => {
-  if (problem.dificultate === "usor") {
-    return 2
-  }
-  else if (problem.dificultate === "mediu") {
-    return 3
-  }
-  else {
-    return 5
-  }
-}
+import { ProblemaType, ScoreOfProblem } from './types'
 
 const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): string => {
   let score = 0, total_score = 0
@@ -28,14 +16,13 @@ const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): strin
   return `${score} / ${total_score}`
 }
 
+const contestDurationInSeconds = 1
+
 const SimulationPage = () => {
   const allEditions = editii
-  const [edition, setEdition] = useState(allEditions[allEditions.length - 1])
-  const problems = edition.probleme
+  const [edition, setEdition] = useState(allEditions[allEditions.length - 3])
   const [problemAnswers, setProblemAnswers] = useState<string[]>([])
   const [activeProblem, setActiveProblem] = useState<number | undefined>(undefined)
-
-  const contestDurationInSeconds = 60
   const {
     totalSeconds,
     seconds,
@@ -44,6 +31,8 @@ const SimulationPage = () => {
     isRunning,
     restart
   } = useTimer({ expiryTimestamp: new Date((new Date).getTime() + contestDurationInSeconds * 1000), autoStart: true });
+
+  const problems = edition.probleme
 
   useEffect(() => {
     setProblemAnswers(problems.map(() => ""))
@@ -83,9 +72,10 @@ const SimulationPage = () => {
             const editionName = e.target.value
             const edition = allEditions.find(edition => edition.name === editionName)
             if (edition) {
+              console.log("Tring to set edition", edition)
               setActiveProblem(undefined)
-              restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
               setEdition(edition)
+              restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
             }
           }}
           style={{
@@ -108,6 +98,7 @@ const SimulationPage = () => {
         border: "1px solid #d3d3d3",
         paddingLeft: "10px",
         paddingRight: "10px",
+        paddingBottom: "10px",
       }}>
         {problems.map((problem, index) => {
           return <Button
@@ -169,6 +160,7 @@ const SimulationPage = () => {
         height: "100%",
         marginLeft: "10px",
         backgroundColor: "rgba(255, 255, 255, 0.8)",
+        overflow: "auto",
       }}
       elevation={3}
     >

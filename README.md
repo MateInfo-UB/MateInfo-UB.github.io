@@ -30,3 +30,19 @@ Locații importante:
 Pentru a rula aplicația în modul de dezvoltare, rulați `npm i` urmat de `npm run dev`.
 
 Pentru a construi aplicația pentru producție, rulați `npm run build`.
+
+## Elemente Markdown
+
+Pentru a renderiza elemente de markdown pentru enunțuri, folosim
+
+Pentru a adaugat LaTeX, folosim structura următoare (prima formulă este pentru inline, a doua pentru block):
+```JS
+const source = `This is to display the 
+\`$$c = \\pm\\sqrt{a^2 + b^2}$$\`
+ in one line
+
+\`\`\`KaTeX
+c = \\pm\\sqrt{a^2 + b^2}
+\`\`\`
+`;
+```
