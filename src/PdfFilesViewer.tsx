@@ -51,7 +51,7 @@ const PdfFilesViewer = ({ etapa }: PdfFilesViewerProps) => {
   })
 
   // Sort by edition
-  fisiere.sort((a, b) => a.editie.localeCompare(b.editie))
+  fisiere.sort((a, b) => a.editie.localeCompare(b.editie)).reverse()
 
   return <div style={{
     height: "100%",
