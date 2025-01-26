@@ -8,10 +8,10 @@ const FileViewer = ({ pdfFile }: { pdfFile: string }) => {
   return <div style={{
     height: "100%",
     width: "100%",
-    padding: "10px",
+    paddingLeft: "10px",
   }}>
     <Card
-      elevation={3}
+      elevation={4}
       style={{
         padding: 0,
         height: "100%",
@@ -61,13 +61,15 @@ const PdfFilesViewer = ({ etapa }: PdfFilesViewerProps) => {
   }}>
     <div style={{
       height: "100%",
-      paddingTop: "100px"
+      // paddingTop: "100px"
+      // padding: "5px",
     }}>
       <Card
         elevation={3}
         style={{
           width: "100%",
           textAlign: "center",
+          height: "100%",
         }}
       >
         <H4>Ediție</H4>
