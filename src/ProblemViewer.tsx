@@ -25,7 +25,7 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
     }}
     data-color-mode="light"
   >
-    <H3 style={{ textAlign: "center" }}>{problem.titlu} ({problem.dificultate} - {ScoreOfProblem(problem)} puncte)</H3>
+    <H3 style={{ textAlign: "center" }}>{problem.titlu} ({problem.dificultate}, {ScoreOfProblem(problem)} puncte)</H3>
     <MarkdownPreview source={problem.enunt_markdown} style={{ padding: 16 }}
       components={{
         code: ({ children = [], className, ...props }) => {
@@ -84,7 +84,11 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
           onClick={() => setPickedAnswer(varianta.toString())}
           // disabled={isInReviewMode}
           checked={pickedAnswer === varianta.toString()}
-          style={{ paddingLeft: "30px", paddingRight: "30px" }}
+          style={{
+            paddingLeft: "30px",
+            paddingRight: "30px",
+            fontWeight: isInReviewMode && varianta.toString() === problem.raspuns.toString() ? "bold" : "normal"
+          }}
         />
       })}
     </div>
