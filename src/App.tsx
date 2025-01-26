@@ -52,7 +52,7 @@ function App() {
   return (
     <div style={{ "height": "100vh", "display": "flex", "flexDirection": "column", overflow: "hidden" }}>
       <div style={{ height: "50px" }}>
-        <Navbar style={{ "height": "50px" }}>
+        <Navbar style={{ "height": "50px", backgroundColor: "rgb(235, 234, 234)" }}>
           <Navbar.Group align={Alignment.LEFT}>
             <Navbar.Heading>MateInfoUB, Informatică</Navbar.Heading>
             <Navbar.Divider />
