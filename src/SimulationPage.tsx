@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Button, Card, NonIdealState, NonIdealStateIconSize, ProgressBar } from '@blueprintjs/core'
+import { Button, Card, HTMLSelect, NonIdealState, NonIdealStateIconSize, ProgressBar } from '@blueprintjs/core'
 import { editii } from './data'
 import { ProblemViewer } from './ProblemViewer'
 import { useTimer } from 'react-timer-hook'
@@ -63,7 +63,7 @@ const SimulationPage = () => {
         paddingBottom: "15px",
         position: "relative",
       }}>
-      <select
+      <HTMLSelect
         value={edition.name}
         onChange={(e) => {
           const editionName = e.target.value
@@ -82,7 +82,7 @@ const SimulationPage = () => {
         }}
       >
         {allEditions.map(edition => <option value={edition.name} key={edition.name}>{edition.name}</option>)}
-      </select>
+      </HTMLSelect>
       <div style={{
         display: "flex",
         flexDirection: "row",
@@ -215,7 +215,7 @@ const SimulationPage = () => {
         />
       }
     </Card>
-  </div>
+  </div >
 }
 
 export { SimulationPage }
