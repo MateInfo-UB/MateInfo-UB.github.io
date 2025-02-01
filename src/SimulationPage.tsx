@@ -4,6 +4,7 @@ import { editii } from './data'
 import { ProblemViewer } from './ProblemViewer'
 import { useTimer } from 'react-timer-hook'
 import { ProblemaType, ScoreOfProblem } from './types'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): string => {
   let score = 0, total_score = 0
@@ -20,7 +21,10 @@ const contestDurationInSeconds = 2 * 60 * 60
 
 const SimulationPage = () => {
   const allEditions = editii
-  const [edition, setEdition] = useState(allEditions[0])
+  const navigate = useNavigate()
+  const editionId = useParams().activeEdition || allEditions[0].name
+  const edition = allEditions.find(edition => edition.name === editionId) || allEditions[0]
+
   const [problemAnswers, setProblemAnswers] = useState<string[]>([])
   const [activeProblem, setActiveProblem] = useState<number | undefined>(undefined)
   const {
@@ -39,7 +43,12 @@ const SimulationPage = () => {
 
   useEffect(() => {
     setProblemAnswers(problems.map(() => ""))
+    // Wrong edition, should bail out
+    if (edition.name !== editionId) {
+      navigate(`/simulari/${edition.name}`)
+    }
   }, [edition, problems])
+
 
   const hoursPassed = Math.floor((contestDurationInSeconds - totalSeconds) / 3600)
   const minutesPassed = Math.floor(((contestDurationInSeconds - totalSeconds) % 3600) / 60)
@@ -71,8 +80,8 @@ const SimulationPage = () => {
           if (edition) {
             console.log("Tring to set edition", edition)
             setActiveProblem(undefined)
-            setEdition(edition)
             restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
+            navigate(`/simulari/${edition.name}`)
           }
         }}
         style={{

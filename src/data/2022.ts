@@ -100,7 +100,7 @@ Cât durează cel mai rapid traseu de la orașul \`12\` la orașul \`72\`?
 };
 
 const problema_7: ProblemaType = {
-  titlu: "Matrice pătratică",
+  titlu: "Matrice binară",
   enunt_markdown: `
 Fie o matrice pătratică de dimensiune \`2022\` ce conține valori de \`1\` și \`0\`, astfel încât există exact o valoare egală cu \`1\` pe fiecare linie și pe fiecare coloană.
 

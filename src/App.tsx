@@ -132,8 +132,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/simulari" element={<SimulationPage />} />
-            <Route path="/etapa-I" element={<PdfFilesViewer etapa="I" />} />
-            <Route path="/etapa-II" element={<PdfFilesViewer etapa="II" />} />
+            <Route path="/simulari/:activeEdition" element={<SimulationPage />} />
+            <Route path="/etapa-I/" element={<PdfFilesViewer etapa="I" />} />
+            <Route path="/etapa-I/:activeTab" element={<PdfFilesViewer etapa="I" />} />
+            <Route path="/etapa-II/" element={<PdfFilesViewer etapa="II" />} />
+            <Route path="/etapa-II/:activeTab" element={<PdfFilesViewer etapa="II" />} />
           </Routes>
         </div>
       </div>

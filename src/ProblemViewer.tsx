@@ -35,6 +35,7 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
             });
             return <code dangerouslySetInnerHTML={{ __html: html }} style={{ background: 'transparent' }} />;
           }
+          // eslint-disable-next-line react/prop-types
           const code = props.node && props.node.children ? getCodeString(props.node.children) : children;
           if (
             typeof code === 'string' &&
@@ -84,6 +85,7 @@ const ProblemViewer = ({ problem, pickedAnswer, setPickedAnswer, isInReviewMode 
           onClick={() => setPickedAnswer(varianta.toString())}
           // disabled={isInReviewMode}
           checked={pickedAnswer === varianta.toString()}
+          onChange={() => { }}
           style={{
             paddingLeft: "30px",
             paddingRight: "30px",
