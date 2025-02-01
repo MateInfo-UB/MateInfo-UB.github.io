@@ -1,6 +1,7 @@
 import { Card, Tabs, Tab, TabsExpander, H4 } from '@blueprintjs/core'
 import { editii } from './data'
-import { useNavigate, useParams } from 'react-router-dom'
+import { usePathQuery } from './pathHelpers'
+import { useState } from 'react'
 
 const FileViewer = ({ pdfFile }: { pdfFile: string }) => {
   // TODO: show all pdfs, not just one
@@ -34,8 +35,12 @@ interface PdfFilesViewerProps {
 }
 
 const PdfFilesViewer = ({ etapa }: PdfFilesViewerProps) => {
-  const activeTab = useParams().activeTab || "0"
-  const navigate = useNavigate()
+  const { getPathQuery, setPathQuery } = usePathQuery()
+  const [activeTab, setActiveTabInternal] = useState(getPathQuery("activeTab", "0"))
+  const setActiveTab = (newTab: string) => {
+    setActiveTabInternal(newTab)
+    setPathQuery("activeTab", newTab)
+  }
 
   // pentru fiecare editie care sunt fisierele pdf
   const fisiere: { editie: string, pdf: string }[] = editii.flatMap(editie => {
@@ -77,7 +82,7 @@ const PdfFilesViewer = ({ etapa }: PdfFilesViewerProps) => {
         <Tabs
           vertical
           animate={true}
-          onChange={(newTab) => { navigate(`/etapa-${etapa}/${newTab}`) }}
+          onChange={setActiveTab}
           selectedTabId={activeTab}>
           {fisiere.map((fisier, index) =>
             <Tab

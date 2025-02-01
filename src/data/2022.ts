@@ -378,6 +378,10 @@ const editia_2022: EditionType = {
   ],
   pdf_etapa_1_link: "./pdfs/2022-etapa-I-A.pdf",
   pdf_etapa_2_link: [
+    "./pdfs/2022-felinare.pdf",
+    "./pdfs/2022-cazane.pdf",
+    "./pdfs/2022-tren.pdf",
+    "./pdfs/2022-vopsea.pdf",
   ]
 }
 

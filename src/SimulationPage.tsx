@@ -4,7 +4,8 @@ import { editii } from './data'
 import { ProblemViewer } from './ProblemViewer'
 import { useTimer } from 'react-timer-hook'
 import { ProblemaType, ScoreOfProblem } from './types'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { usePathQuery } from './pathHelpers'
 
 const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): string => {
   let score = 0, total_score = 0
@@ -20,9 +21,14 @@ const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): strin
 const contestDurationInSeconds = 2 * 60 * 60
 
 const SimulationPage = () => {
+  const { getPathQuery, setPathQuery } = usePathQuery()
   const allEditions = editii
   const navigate = useNavigate()
-  const editionId = useParams().activeEdition || allEditions[0].name
+  const [editionId, setEditionIdInternal] = useState(getPathQuery("edition", allEditions[0].name))
+  const setEditionId = (newEdition: string) => {
+    setEditionIdInternal(newEdition)
+    setPathQuery("edition", newEdition)
+  }
   const edition = allEditions.find(edition => edition.name === editionId) || allEditions[0]
 
   const [problemAnswers, setProblemAnswers] = useState<string[]>([])
@@ -43,12 +49,14 @@ const SimulationPage = () => {
 
   useEffect(() => {
     setProblemAnswers(problems.map(() => ""))
+    setActiveProblem(undefined)
+    restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
+
     // Wrong edition, should bail out
     if (edition.name !== editionId) {
       navigate(`/simulari/${edition.name}`)
     }
-  }, [edition, problems])
-
+  }, [editionId, edition, problems])
 
   const hoursPassed = Math.floor((contestDurationInSeconds - totalSeconds) / 3600)
   const minutesPassed = Math.floor(((contestDurationInSeconds - totalSeconds) % 3600) / 60)
@@ -78,10 +86,7 @@ const SimulationPage = () => {
           const editionName = e.target.value
           const edition = allEditions.find(edition => edition.name === editionName)
           if (edition) {
-            console.log("Tring to set edition", edition)
-            setActiveProblem(undefined)
-            restart(new Date((new Date).getTime() + contestDurationInSeconds * 1000))
-            navigate(`/simulari/${edition.name}`)
+            setEditionId(editionName)
           }
         }}
         style={{

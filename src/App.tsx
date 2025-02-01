@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Navbar, Alignment, Button, Card, H3, Switch } from '@blueprintjs/core'
 import '@blueprintjs/core/lib/css/blueprint.css'
 import CanvasAnimation from './Animation'
-import { HashRouter, Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, useLocation } from "react-router-dom";
 import { PdfFilesViewer } from './PdfFilesViewer'
 import { SimulationPage } from './SimulationPage'
+import { LinkuriUtile } from './LinkuriUtile';
 
 
 
@@ -54,93 +55,116 @@ function Home() {
 
 function App() {
   const [animationsEnabled, setAnimationsEnabled] = useState<boolean>(window.localStorage.getItem('animationsDisabled') == 'true' ? false : true)
+  const location = useLocation();
+
+  const linkStyle: React.CSSProperties = {
+    textDecoration: "none",
+    height: "100%",
+    padding: "6px 0 5px 0"
+  }
+
+  const buttonStyle: React.CSSProperties = {
+    marginRight: "10px",
+    height: "100%"
+  }
+
+  console.log(location)
 
   return (
-    <HashRouter>
-      <div style={{ "height": "100vh", "display": "flex", "flexDirection": "column", overflow: "hidden" }}>
-        <div style={{ height: "50px" }}>
-          <Navbar style={{ "height": "50px", backgroundColor: "rgb(235, 234, 234)" }}>
-            <Navbar.Group align={Alignment.LEFT}>
-              <Navbar.Heading>MateInfoUB, Informatică</Navbar.Heading>
-              <Navbar.Divider />
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Button
-                  className="bp5-minimal"
-                  icon="home" text="Prima Pagină"
-                  style={{ marginRight: "10px" }}
-                />
-              </Link>
-              <Link to="/simulari" style={{ textDecoration: "none" }}>
-                <Button
-                  className="bp5-minimal"
-                  icon="code" text="Simulări Etapa I"
-                  style={{ marginRight: "10px" }}
-                />
-              </Link>
-              <Link to="/etapa-I" style={{ textDecoration: "none" }}>
-                <Button
-                  className="bp5-minimal"
-                  icon="document"
-                  text="Subiecte Etapa I"
-                  style={{ marginRight: "10px" }}
-                />
-              </Link>
-              <Link to="/etapa-II" style={{ textDecoration: "none" }}>
-                <Button
-                  className="bp5-minimal"
-                  icon="document"
-                  text="Subiecte Etapa II"
-                  style={{ marginRight: "10px" }}
-                />
-              </Link>
-            </Navbar.Group>
-            <div style={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "end",
-              alignItems: "center",
-              height: "100%"
-            }}>
-              <Switch checked={animationsEnabled} label="Animații" onChange={() => {
-                window.localStorage.setItem('animationsDisabled', (animationsEnabled).toString())
-                setAnimationsEnabled(!animationsEnabled)
-              }}
-                style={{ margin: 0 }} />
-
+    <div style={{ "height": "100vh", "display": "flex", "flexDirection": "column", overflow: "hidden" }}>
+      <div style={{ height: "50px" }}>
+        <Navbar style={{ "height": "50px", backgroundColor: "rgb(235, 234, 234)" }}>
+          <Navbar.Group align={Alignment.LEFT}>
+            <Navbar.Heading><Link to="/" style={{ fontWeight: "bold", color: "rgb(77, 77, 77)" }}>MateInfoUB, Informatică</Link></Navbar.Heading>
+            <Navbar.Divider />
+            <Link to="/" style={linkStyle}>
               <Button
                 className="bp5-minimal"
-                icon="bug"
-                text="Raportează o Problemă"
-                style={{ marginLeft: "10px" }}
-                onClick={() => window.open('https://github.com/MateInfo-UB/Simulari-Etapa-I/issues/new', '_blank')!.focus()}
+                icon="home" text="Prima Pagină"
+                style={buttonStyle}
+                active={location.pathname === "/"}
               />
-            </div>
-          </Navbar>
-        </div>
-        <div style={{
-          height: "calc(100vh - 50px)",
-          position: "relative",
-        }}>
-          {animationsEnabled && <div style={{
-            position: "absolute",
-            height: "100%",
-            width: "100%",
-            zIndex: -1,
-          }}><CanvasAnimation /></div>}
+            </Link>
+            <Link to="/simulari" style={linkStyle}>
+              <Button
+                className="bp5-minimal"
+                icon="code" text="Simulări Etapa I"
+                style={buttonStyle}
+                active={location.pathname === "/simulari"}
+              />
+            </Link>
+            <Link to="/etapa-I" style={linkStyle}>
+              <Button
+                className="bp5-minimal"
+                icon="document"
+                text="Subiecte Etapa I"
+                style={buttonStyle}
+                active={location.pathname === "/etapa-I"}
+              />
+            </Link>
+            <Link to="/etapa-II" style={linkStyle}>
+              <Button
+                className="bp5-minimal"
+                icon="document"
+                text="Subiecte Etapa II"
+                style={buttonStyle}
+                active={location.pathname === "/etapa-II"}
+              />
+            </Link>
+            <Link to="/linkuri" style={linkStyle}>
+              <Button
+                className="bp5-minimal"
+                icon="link"
+                text="Linkuri Utile"
+                style={buttonStyle}
+                active={location.pathname === "/linkuri"}
+              />
+            </Link>
+          </Navbar.Group>
+          <div style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "end",
+            alignItems: "center",
+            height: "100%"
+          }}>
+            <Switch checked={animationsEnabled} label="Animații" onChange={() => {
+              window.localStorage.setItem('animationsDisabled', (animationsEnabled).toString())
+              setAnimationsEnabled(!animationsEnabled)
+            }}
+              style={{ margin: 0 }} />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/simulari" element={<SimulationPage />} />
-            <Route path="/simulari/:activeEdition" element={<SimulationPage />} />
-            <Route path="/etapa-I/" element={<PdfFilesViewer etapa="I" />} />
-            <Route path="/etapa-I/:activeTab" element={<PdfFilesViewer etapa="I" />} />
-            <Route path="/etapa-II/" element={<PdfFilesViewer etapa="II" />} />
-            <Route path="/etapa-II/:activeTab" element={<PdfFilesViewer etapa="II" />} />
-          </Routes>
-        </div>
+            <Button
+              className="bp5-minimal"
+              icon="bug"
+              text="Raportează o Problemă"
+              style={{ marginLeft: "10px" }}
+              onClick={() => window.open('https://github.com/MateInfo-UB/Simulari-Etapa-I/issues/new', '_blank')!.focus()}
+            />
+          </div>
+        </Navbar>
       </div>
-    </HashRouter>
+      <div style={{
+        height: "calc(100vh - 50px)",
+        position: "relative",
+      }}>
+        {animationsEnabled && <div style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+          zIndex: -1,
+        }}><CanvasAnimation /></div>}
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/simulari" element={<SimulationPage />} />
+          <Route path="/etapa-I/" element={<PdfFilesViewer etapa="I" />} />
+          <Route path="/etapa-II/" element={<PdfFilesViewer etapa="II" />} />
+          <Route path="/linkuri" element={<LinkuriUtile />} />
+        </Routes>
+      </div>
+    </div>
   )
 }
 

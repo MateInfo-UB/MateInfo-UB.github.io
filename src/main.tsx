@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import { HashRouter } from 'react-router-dom';
 
 const isMobile = (): boolean => {
   let check = false;
@@ -15,7 +16,9 @@ const AppWithMobileChecks = () => {
       <h1>Din păcate, această pagină nu funcționează de pe dispozitive mobile (telefoane).</h1>
     </div>
   }
-  return <App />
+  return (<HashRouter>
+    <App />
+  </HashRouter>)
 }
 
 createRoot(document.getElementById('root')!).render(
