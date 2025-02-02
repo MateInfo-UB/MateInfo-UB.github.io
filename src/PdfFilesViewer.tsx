@@ -17,7 +17,9 @@ const FileViewer = ({ pdfFile }: { pdfFile: string }) => {
         padding: 0,
         height: "100%",
         width: "100%",
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        backdropFilter: "blur(3px)",
+        WebkitBackdropFilter: "blur(3px)",
       }}>
       <iframe style={{
         height: "100%",
@@ -76,6 +78,9 @@ const PdfFilesViewer = ({ etapa }: PdfFilesViewerProps) => {
           width: "100%",
           textAlign: "center",
           height: "100%",
+          backgroundColor: "rgba(255, 255, 255, 0.3)",
+          backdropFilter: "blur(3px)",
+          WebkitBackdropFilter: "blur(3px)",
         }}
       >
         <H4>Ediție</H4>

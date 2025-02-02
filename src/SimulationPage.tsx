@@ -103,11 +103,13 @@ const SimulationPage = ({ history }: { history: History }) => {
       style={{
         height: "100%",
         width: "25%",
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
         display: "flex",
         flexDirection: "column",
         paddingBottom: "15px",
         position: "relative",
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        backdropFilter: "blur(3px)",
+        WebkitBackdropFilter: "blur(3px)",
       }}>
       <HTMLSelect
         value={edition.name}
@@ -239,7 +241,9 @@ const SimulationPage = ({ history }: { history: History }) => {
         flex: 1,
         height: "100%",
         marginLeft: "10px",
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        backgroundColor: "rgba(255, 255, 255, 0.7)",
+        backdropFilter: "blur(3px)",
+        WebkitBackdropFilter: "blur(3px)",
         overflow: "auto",
         padding: 0
       }}

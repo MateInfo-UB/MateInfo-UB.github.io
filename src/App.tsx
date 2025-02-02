@@ -13,6 +13,9 @@ function Home() {
     marginLeft: '5vh',
     marginRight: '5vh',
     marginTop: '10vh',
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    backdropFilter: "blur(3px)",
+    WebkitBackdropFilter: "blur(3px)",
   }
   return <div style={{
     height: "100%",
