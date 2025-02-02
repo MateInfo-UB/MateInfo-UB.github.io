@@ -101,7 +101,7 @@ Ajutați-o pe Alexandrina să numere câte bilete norocoase deține!
 };
 
 const problema_6: ProblemaType = {
-  titlu: "Cel mai mic număr real reprezentabil",
+  titlu: "Cel mai mic număr",
   enunt_markdown: `
 Marius i-a cumpărat fetiței sale, Luna, un calculator de jucărie. În mod curios, acest calculator are un procesor care funcționează pe 10 biți. O variabilă de tip număr real păstrează valoarea sa în următorul format: \`$$m \\ \\times \\ 2^{-e}$$\`, unde m și e sunt numere naturale a căror reprezentare binară este păstrată în variabilă. Mai exact primii 3 biți semnificativi reprezintă valoarea lui e și următorii 7 reprezintă valoarea lui m.
 

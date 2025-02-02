@@ -1,6 +1,6 @@
 import { Card, Tabs, Tab, TabsExpander, H4 } from '@blueprintjs/core'
 import { editii } from './data'
-import { usePathQuery } from './pathHelpers'
+import { usePathQuery } from './helpers'
 import { useState } from 'react'
 
 const FileViewer = ({ pdfFile }: { pdfFile: string }) => {

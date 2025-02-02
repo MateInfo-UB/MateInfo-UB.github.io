@@ -65,7 +65,7 @@ function LinkuriUtile() {
             <Button intent="primary" style={{ width: "100%" }}>Cornișoni Afumați</Button>
           </a>
           <a href="https://kilonova.ro/problems/2824" target='_blank' rel='noreferrer' style={problemLinkButtonStyle}>
-            <Button intent="primary" style={{ width: "100%" }}>Racituri cu Pireu</Button>
+            <Button intent="primary" style={{ width: "100%" }}>Răcituri cu Pireu</Button>
           </a>
           <a href="https://kilonova.ro/problems/2822" target='_blank' rel='noreferrer' style={problemLinkButtonStyle}>
             <Button intent="primary" style={{ width: "100%" }}>Prăjitură cu Mujdei</Button>

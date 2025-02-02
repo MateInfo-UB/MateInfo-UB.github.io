@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import { HashRouter } from 'react-router-dom';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import { createHashHistory } from "history"
 
 const isMobile = (): boolean => {
   let check = false;
@@ -11,14 +12,17 @@ const isMobile = (): boolean => {
 };
 
 const AppWithMobileChecks = () => {
+  const history = createHashHistory();
+
   if (isMobile()) {
     return <div style={{ height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <h1>Din păcate, această pagină nu funcționează de pe dispozitive mobile (telefoane).</h1>
     </div>
   }
-  return (<HashRouter>
-    <App />
-  </HashRouter>)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (<HistoryRouter history={history as any}>
+    <App history={history} />
+  </HistoryRouter>)
 }
 
 createRoot(document.getElementById('root')!).render(

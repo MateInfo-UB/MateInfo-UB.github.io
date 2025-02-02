@@ -11,7 +11,6 @@ const usePathQuery = () => {
   };
 
   const getPathQuery = (key: string, defaultValue: string): string => {
-    const location = useLocation()
     const searchParams = new URLSearchParams(location.search)
     return searchParams.get(key) || defaultValue
   }

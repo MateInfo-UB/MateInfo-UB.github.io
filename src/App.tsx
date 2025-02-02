@@ -6,8 +6,7 @@ import { Route, Routes, Link, useLocation } from "react-router-dom";
 import { PdfFilesViewer } from './PdfFilesViewer'
 import { SimulationPage } from './SimulationPage'
 import { LinkuriUtile } from './LinkuriUtile';
-
-
+import { HashHistory } from 'history';
 
 function Home() {
   const cardStyle: React.CSSProperties = {
@@ -53,7 +52,7 @@ function Home() {
   </div>
 }
 
-function App() {
+function App({ history }: { history: HashHistory }) {
   const [animationsEnabled, setAnimationsEnabled] = useState<boolean>(window.localStorage.getItem('animationsDisabled') == 'true' ? false : true)
   const location = useLocation();
 
@@ -67,8 +66,6 @@ function App() {
     marginRight: "10px",
     height: "100%"
   }
-
-  console.log(location)
 
   return (
     <div style={{ "height": "100vh", "display": "flex", "flexDirection": "column", overflow: "hidden" }}>
@@ -138,7 +135,6 @@ function App() {
             <Button
               className="bp5-minimal"
               icon="bug"
-              text="Raportează o Problemă"
               style={{ marginLeft: "10px" }}
               onClick={() => window.open('https://github.com/MateInfo-UB/Simulari-Etapa-I/issues/new', '_blank')!.focus()}
             />
@@ -158,7 +154,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/simulari" element={<SimulationPage />} />
+          <Route path="/simulari" element={<SimulationPage history={history} />} />
           <Route path="/etapa-I/" element={<PdfFilesViewer etapa="I" />} />
           <Route path="/etapa-II/" element={<PdfFilesViewer etapa="II" />} />
           <Route path="/linkuri" element={<LinkuriUtile />} />

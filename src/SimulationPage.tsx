@@ -4,8 +4,9 @@ import { editii } from './data'
 import { ProblemViewer } from './ProblemViewer'
 import { useTimer } from 'react-timer-hook'
 import { ProblemaType, ScoreOfProblem } from './types'
-import { useNavigate } from 'react-router-dom'
-import { usePathQuery } from './pathHelpers'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { usePathQuery } from './helpers'
+import { History } from 'history'
 
 const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): string => {
   let score = 0, total_score = 0
@@ -20,13 +21,14 @@ const ComputeScore = (problemAnswers: string[], problems: ProblemaType[]): strin
 
 const contestDurationInSeconds = 2 * 60 * 60
 
-const SimulationPage = () => {
+const SimulationPage = ({ history }: { history: History }) => {
   const { getPathQuery, setPathQuery } = usePathQuery()
   const allEditions = editii
   const navigate = useNavigate()
+  const location = useLocation()
   const [editionId, setEditionIdInternal] = useState(getPathQuery("edition", allEditions[0].name))
   const setEditionId = (newEdition: string) => {
-    setEditionIdInternal(newEdition)
+    // Try to navigate to the new edition.
     setPathQuery("edition", newEdition)
   }
   const edition = allEditions.find(edition => edition.name === editionId) || allEditions[0]
@@ -44,6 +46,14 @@ const SimulationPage = () => {
     resume
   } = useTimer({ expiryTimestamp: new Date((new Date).getTime() + contestDurationInSeconds * 1000), autoStart: true });
 
+  // Update the editionId if the location changes.
+  useEffect(() => {
+    const newEditionId = getPathQuery("edition", allEditions[0].name)
+    if (newEditionId !== editionId) {
+      setEditionIdInternal(newEditionId)
+    }
+  }, [location, getPathQuery, editionId, allEditions])
+
   const timerIsFinished = totalSeconds === 0
   const problems = edition.probleme
 
@@ -57,6 +67,25 @@ const SimulationPage = () => {
       navigate(`/simulari/${edition.name}`)
     }
   }, [editionId, edition, problems])
+
+  // Prompt the user before leaving the page, if they answered any questions.
+  useEffect(() => {
+    // Set up the blocker, this will be called whenever the user tries to navigate away.
+    const unblock = history.block((tx) => {
+      // If the user has answered any questions, prompt them before leaving.
+      const hasAnsweredQuestions = problemAnswers.some(answer => answer !== "")
+      if (!hasAnsweredQuestions || window.confirm("Progresul tău va fi pierdut. Ești sigur că vrei să părăsești pagina?")) {
+        console.log("Unblocking navigation.")
+        unblock()
+        tx.retry()
+      }
+    });
+
+    return () => {
+      unblock();
+    };
+  }, [problemAnswers, history]);
+
 
   const hoursPassed = Math.floor((contestDurationInSeconds - totalSeconds) / 3600)
   const minutesPassed = Math.floor(((contestDurationInSeconds - totalSeconds) % 3600) / 60)
@@ -142,6 +171,7 @@ const SimulationPage = () => {
       <div style={{
         flex: 1,
         overflow: "scroll",
+        overflowX: "hidden",
         border: "1px solid #d3d3d3",
         paddingLeft: "10px",
         paddingRight: "10px",
