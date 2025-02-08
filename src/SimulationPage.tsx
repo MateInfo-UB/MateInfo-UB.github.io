@@ -136,7 +136,7 @@ const SimulationPage = ({ history }: { history: History }) => {
         elevation={3}
         style={{
           height: "100%",
-          width: "25%",
+          width: "calc(min(max(250px, 25%), 350px))",
           display: "flex",
           flexDirection: "column",
           paddingBottom: "15px",
