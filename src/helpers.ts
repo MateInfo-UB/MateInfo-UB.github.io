@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom";
 
 const usePathQuery = () => {
   const location = useLocation();
@@ -11,11 +11,11 @@ const usePathQuery = () => {
   };
 
   const getPathQuery = (key: string, defaultValue: string): string => {
-    const searchParams = new URLSearchParams(location.search)
-    return searchParams.get(key) || defaultValue
-  }
+    const searchParams = new URLSearchParams(location.search);
+    return searchParams.get(key) || defaultValue;
+  };
 
   return { setPathQuery, getPathQuery };
 };
 
-export { usePathQuery }
+export { usePathQuery };

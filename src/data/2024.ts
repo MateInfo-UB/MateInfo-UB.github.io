@@ -13,7 +13,7 @@ Care este numărul minim de poduri ce trebuie construite astfel încât un turis
   imagine: "./images/2024-koningsberg.png",
   variante: [0, 1, 2, 3, 4],
   raspuns: 1,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_2: ProblemaType = {
@@ -42,10 +42,10 @@ Care din următoarele modificări va face codul să afișeze exact de 3 ori cara
     "2, 3 si 4.",
     "3, 4 si 5.",
     "3, 5 si 6.",
-    "1, 3 si 6."
+    "1, 3 si 6.",
   ],
   raspuns: "3, 4 si 5.",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_3: ProblemaType = {
@@ -74,7 +74,7 @@ Câte perechi neordonate (perechea (a, b) este considerată egală cu perechea (
 `,
   variante: [3, 7, 11, 15, 19],
   raspuns: 11,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_4: ProblemaType = {
@@ -85,7 +85,7 @@ Câți arbori parțiali de cost minim are următorul graf?
   imagine: "./images/2024-APM-uri.png",
   variante: [6, 5, 7, 3, 9],
   raspuns: 7,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_5: ProblemaType = {
@@ -97,7 +97,7 @@ Ajutați-o pe Alexandrina să numere câte bilete norocoase deține!
 `,
   variante: [50412, 55252, 57823, 49575, 45198],
   raspuns: 55252,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_6: ProblemaType = {
@@ -114,7 +114,7 @@ Marius îi dă următoarea temă Lunei: care este cea mai mică valoare nenulă 
 `,
   variante: [0.001, 0.0078125, 0.00390625, 0.005859375, 0.015625],
   raspuns: 0.0078125,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_7: ProblemaType = {
@@ -129,7 +129,7 @@ Inițial acul arată către cifra 0. Care este numărul **minim** de operații d
 `,
   variante: [41, 42, 43, 44, 45],
   raspuns: 42,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_8: ProblemaType = {
@@ -141,7 +141,7 @@ Alexandru, noul tehnician-șef al datacenter-ului, a făcut un program care moni
 `,
   variante: [29, 30, 31, 32, 33],
   raspuns: 33,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_9: ProblemaType = {
@@ -157,7 +157,7 @@ Care este numărul total de conexiuni securizate ce se pot stabili?
 `,
   variante: [63, 61, 62, 65, 64],
   raspuns: 63,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_10: ProblemaType = {
@@ -173,7 +173,7 @@ Câte numere o să-i placă Marei pentru baza 5?
 `,
   variante: [31, 68, 15, 64, 260],
   raspuns: 64,
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_11: ProblemaType = {
@@ -200,7 +200,7 @@ La linkul <a href="data/2024-tree.txt" target="_blank">acesta</a> se află rezul
 `,
   variante: [53, 164, 419, 602, 734, 953, 1231],
   raspuns: 734,
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_12: ProblemaType = {
@@ -212,7 +212,7 @@ Care este suma maximă a capacităților valizelor alese de Matei?
 `,
   variante: ["Este imposibil.", 5, 8, 13, 19, 30, 43],
   raspuns: 43,
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_13: ProblemaType = {
@@ -231,7 +231,7 @@ Pentru cunoscători, problema cere să se afle pentru câte numere n cuprinse î
 `,
   variante: [0, 10, 64, 134, 257, 752, 989],
   raspuns: 134,
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_14: ProblemaType = {
@@ -248,7 +248,7 @@ Cecilia dorește să asculte playlist-ul ei preferat în recreația mare care du
 `,
   variante: [1.8, 2.5, 1.5, 2.2, 2.4, 2.3, 2.6],
   raspuns: 1.8,
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_15: ProblemaType = {
@@ -269,10 +269,10 @@ Care este valoarea minimă și valoarea maximă a lui \`m\`?
     "23 și  251",
     "21 și  232",
     "23 și  232",
-    "22 și  231"
+    "22 și  231",
   ],
   raspuns: "21 și  252",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_16: ProblemaType = {
@@ -291,7 +291,7 @@ Această rundă suplimentară diminuează șansele lui D și E la câștigul teo
   imagine: "./images/2024-jackpot.png",
   variante: [0, 540, 720, 1080, 1350, 2160, 2700],
   raspuns: 1080,
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_17: ProblemaType = {
@@ -324,7 +324,7 @@ Care este ultimul caracter nenul (diferit de \`\\0\`) al secretului?
 `,
   variante: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
   raspuns: "B",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_18: ProblemaType = {
@@ -347,9 +347,11 @@ Care este probabilitatea ca Brăduț să ajungă la școală (punctul \`(3, 4)\`
 
 Considerăm una dintre variantele de răspuns corectă, dacă diferența dintre aceasta și valoarea reală a probabilității este mai mică decât \`0.001\`.
 `,
-  variante: [0.002, 0.015, 0.023, 0.043, 0.074, 0.087, 0.092, 0.131, 0.176, 0.500],
+  variante: [
+    0.002, 0.015, 0.023, 0.043, 0.074, 0.087, 0.092, 0.131, 0.176, 0.5,
+  ],
   raspuns: 0.074,
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_19: ProblemaType = {
@@ -359,9 +361,12 @@ Considerăm șirul **finit** \`123456789101112131415...2024\` format prin alipir
 
 **Notă**: șirul \`a\` este un subșir al șirului \`b\` dacă \`a\` poate fi obținut din \`b\` ștergând 0 sau mai multe caractere din b.
 `,
-  variante: [1421010813, 4858581392, 5144380298, 5715978109, 8173848695, 6859173730, 3268324869, 1278909731, 3429586865, 5430179203],
+  variante: [
+    1421010813, 4858581392, 5144380298, 5715978109, 8173848695, 6859173730,
+    3268324869, 1278909731, 3429586865, 5430179203,
+  ],
   raspuns: 5715978109,
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_20: ProblemaType = {
@@ -374,9 +379,20 @@ Acesta se pomenește în celula \`(0, 0)\` a unei matrice bidimensionale infinit
 Pentru a putea scăpa de vis, Ioan trebuie sa răspundă la următoarea întrebare: \\
 _În câte moduri poate ajunge în celula \`(20, 24)\`, având în vedere restricțiile de mișcare pe care le are?_
 `,
-  variante: ["59713569536180432", "436844856458564300", "152596701737090864", "1119576038404099820", "384848943308945522", "20810114480126744", "52291395481992608", "1735342859526354688", "1343491246084919808", "27053148824164768"],
+  variante: [
+    "59713569536180432",
+    "436844856458564300",
+    "152596701737090864",
+    "1119576038404099820",
+    "384848943308945522",
+    "20810114480126744",
+    "52291395481992608",
+    "1735342859526354688",
+    "1343491246084919808",
+    "27053148824164768",
+  ],
   raspuns: "1119576038404099820",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const editia_2024: EditionType = {
@@ -401,15 +417,15 @@ const editia_2024: EditionType = {
     problema_17,
     problema_18,
     problema_19,
-    problema_20
+    problema_20,
   ],
   pdf_etapa_1_link: "./pdfs/2024-etapa-I.pdf",
   pdf_etapa_2_link: [
     "./pdfs/2024-rame-pane.pdf",
     "./pdfs/2024-racituri-cu-pireu.pdf",
     "./pdfs/2024-prajitura-cu-mujdei.pdf",
-    "./pdfs/2024-cornisoni-afumati.pdf"
-  ]
-}
+    "./pdfs/2024-cornisoni-afumati.pdf",
+  ],
+};
 
 export { editia_2024 };

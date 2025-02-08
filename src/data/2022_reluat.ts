@@ -22,7 +22,7 @@ Care este cea mai mare satisfacție pe care o poate obține Matei amestecând op
 `,
   variante: ["10", "355", "250", "40", "450"],
   raspuns: "355",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_2: ProblemaType = {
@@ -45,7 +45,7 @@ Pe ce linie și pe ce coloană se va afla furnica la pasul \`100001\`?
 `,
   variante: ["(144,316)", "(145,316)", "(145,317)", "(316, 145)", "(317,145)"],
   raspuns: "(145,317)",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_3: ProblemaType = {
@@ -57,9 +57,15 @@ Alex știe că Matei are o parolă de lungime 10 caractere formată din litere m
 
 Dacă Alex caută parola în mod optim, atunci numărul de încercări pe care le va efectua este:
 `,
-  variante: ["cuprins între 0 și 30", "cuprins între 31 și 60", "cuprins între 61 și 90", "cuprins între 91 și 120", "mai mare sau egal cu 121"],
+  variante: [
+    "cuprins între 0 și 30",
+    "cuprins între 31 și 60",
+    "cuprins între 61 și 90",
+    "cuprins între 91 și 120",
+    "mai mare sau egal cu 121",
+  ],
   raspuns: "cuprins între 31 și 60",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_4: ProblemaType = {
@@ -82,7 +88,7 @@ Care este costul minim cu care Alex poate închiria servere cu suma capacități
 `,
   variante: ["500", "433", "440", "439", "437"],
   raspuns: "437",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_5: ProblemaType = {
@@ -95,9 +101,15 @@ Matei are următoarea permutare:
 
 El are voie să efectueze cel mult \`5\` operații de interschimbare a două elemente alăturate. Care este cea mai mică permutare în ordine lexicografică pe care o poate obține?
 `,
-  variante: ["1, 2, 5, 6, 9, 4, 3, 7, 10, 8", "1, 2, 4, 6, 9, 5, 3, 7, 10, 8", "1, 2, 6, 5, 4, 9, 3, 7, 10, 8", "1, 2, 4, 9, 6, 5, 3, 7, 10, 8", "1, 2, 4, 9, 5, 6, 3, 7, 10, 8"],
+  variante: [
+    "1, 2, 5, 6, 9, 4, 3, 7, 10, 8",
+    "1, 2, 4, 6, 9, 5, 3, 7, 10, 8",
+    "1, 2, 6, 5, 4, 9, 3, 7, 10, 8",
+    "1, 2, 4, 9, 6, 5, 3, 7, 10, 8",
+    "1, 2, 4, 9, 5, 6, 3, 7, 10, 8",
+  ],
   raspuns: "1, 2, 4, 9, 6, 5, 3, 7, 10, 8",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_6: ProblemaType = {
@@ -116,7 +128,7 @@ Deși buturuga mică răstoarnă carul mare, nu poate ca un chibrit să aprindă
 `,
   variante: ["6", "7", "8", "9", "10"],
   raspuns: "9",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_7: ProblemaType = {
@@ -141,9 +153,15 @@ Considerăm afirmațiile următoare:
 
 Care din afirmații este adevărată?
 `,
-  variante: ["afirmațiile 1, 2 și 3", "afirmațiile 1 și 2", "afirmația 4", "afirmațiile 2 și 3", "afirmațiile 1, 2 și 4"],
+  variante: [
+    "afirmațiile 1, 2 și 3",
+    "afirmațiile 1 și 2",
+    "afirmația 4",
+    "afirmațiile 2 și 3",
+    "afirmațiile 1, 2 și 4",
+  ],
   raspuns: "afirmația 4",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_8: ProblemaType = {
@@ -163,7 +181,7 @@ Unde \`$$i, j \\in \\{1,2, \\ldots,n\\}$$\`, este egală cu:
 `,
   variante: ["0", "500", "1000", "1998", "500500"],
   raspuns: "0",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_9: ProblemaType = {
@@ -180,7 +198,7 @@ Considerând șirul respectiv ca fiind indexat de la 0, atunci cifra aflată pe 
 `,
   variante: ["1", "2", "3", "6", "9"],
   raspuns: "1",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_10: ProblemaType = {
@@ -194,7 +212,7 @@ Câte astfel de palindromuri sunt?
 `,
   variante: ["99", "100", "101", "102", "103"],
   raspuns: "99",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_11: ProblemaType = {
@@ -204,7 +222,7 @@ Câte numere între \`1\` și \`2.000.000.000\` (inclusiv) au exact \`5\` divizo
 `,
   variante: ["0", "12", "34", "47", "156"],
   raspuns: "47",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_12: ProblemaType = {
@@ -220,7 +238,7 @@ Care este suma maximă a elementelor matricei de mai jos, după înmulțirea uno
 `,
   variante: ["233", "234", "235", "361", "427"],
   raspuns: "361",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_13: ProblemaType = {
@@ -243,9 +261,15 @@ De notat că mereu casierul dă restul exact, cu numărul minim de monede necesa
 
 Cu ce monede va rămâne Alex, dacă are de plătit, în ordine, sumele \`4.7, 2.3, 10.1, 3.5\`?
 `,
-  variante: ["o monedă de 50 de bani și o monedă de 10 bani", "două monede de 50 de bani", "nicio monedă", "4 monede de 10 bani", "o monedă de 50 de bani"],
+  variante: [
+    "o monedă de 50 de bani și o monedă de 10 bani",
+    "două monede de 50 de bani",
+    "nicio monedă",
+    "4 monede de 10 bani",
+    "o monedă de 50 de bani",
+  ],
   raspuns: "4 monede de 10 bani",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_14: ProblemaType = {
@@ -263,7 +287,7 @@ Având prețul acțiunilor pentru minutul 1, 2, ..., 100, Alex își pune următ
 `,
   variante: ["0", "34", "55", "73", "96"],
   raspuns: "96",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_15: ProblemaType = {
@@ -281,7 +305,7 @@ Câte numere cuprinse între \`1\` și \`2022\` (inclusiv) au puterea un număr 
 `,
   variante: ["141", "2008", "446", "431", "1577"],
   raspuns: "431",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_16: ProblemaType = {
@@ -303,7 +327,7 @@ Care este latura maximă a unui pătrat complet inclus în tapițerie, cu laturi
 `,
   variante: ["23", "33", "43", "53", "63"],
   raspuns: "53",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_17: ProblemaType = {
@@ -323,9 +347,15 @@ Alex are în minte 5 întrebări pe care vrea să le folosească pentru a afla d
 
 Alex dorește să pună exact o întrebare dintre cele 5 pentru a-l identifica pe Matei. Pe care dintre cele 5 întrebări le poate folosi?
 `,
-  variante: ["întrebarea 1", "întrebările 1 și 5", "întrebarea 2", "întrebările 1 și 4", "întrebările 2, 3 și 4"],
+  variante: [
+    "întrebarea 1",
+    "întrebările 1 și 5",
+    "întrebarea 2",
+    "întrebările 1 și 4",
+    "întrebările 2, 3 și 4",
+  ],
   raspuns: "întrebările 2, 3 și 4",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_18: ProblemaType = {
@@ -356,9 +386,20 @@ void g()
 }
 \`\`\`
 `,
-  variante: ["Suma este 0", "Suma este 1", "Suma este 4", "Suma este 8", "Suma este 16", "Suma este 32", "Suma este 64", "Suma este 128", "Suma este 256", "Suma este 512"],
+  variante: [
+    "Suma este 0",
+    "Suma este 1",
+    "Suma este 4",
+    "Suma este 8",
+    "Suma este 16",
+    "Suma este 32",
+    "Suma este 64",
+    "Suma este 128",
+    "Suma este 256",
+    "Suma este 512",
+  ],
   raspuns: "Suma este 4",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_19: ProblemaType = {
@@ -370,9 +411,20 @@ Ea ar vrea să vadă câte turnulețe poate forma cu ele fără ca un cub verde 
 
 În câte moduri diferite poate construi turnulețe de acest tip folosind toate cuburile? Două moduri sunt diferite dacă șirurile de culori ce încep de la primul cub de jos sunt diferite.
 `,
-  variante: ["23519245", "1097450640", "41409225", "37268302", "10803075", "194276877", "298507535", "107567859", "251890065", "462058202"],
+  variante: [
+    "23519245",
+    "1097450640",
+    "41409225",
+    "37268302",
+    "10803075",
+    "194276877",
+    "298507535",
+    "107567859",
+    "251890065",
+    "462058202",
+  ],
   raspuns: "41409225",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_20: ProblemaType = {
@@ -396,7 +448,7 @@ Care este cea mai mică valoare a numărului \`N\` pentru care pot exista exact 
 `,
   variante: ["65", "66", "67", "68", "69", "70", "71", "72", "73", "74"],
   raspuns: "68",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const editia_2022_bis: EditionType = {
@@ -421,11 +473,10 @@ const editia_2022_bis: EditionType = {
     problema_17,
     problema_18,
     problema_19,
-    problema_20
+    problema_20,
   ],
   pdf_etapa_1_link: "./pdfs/2022-etapa-I-B.pdf",
-  pdf_etapa_2_link: [
-  ]
-}
+  pdf_etapa_2_link: [],
+};
 
 export { editia_2022_bis };

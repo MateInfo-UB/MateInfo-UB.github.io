@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 const CanvasAnimation = () => {
   const canvasRef = useRef(null);
@@ -6,10 +6,10 @@ const CanvasAnimation = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current as unknown as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-    const WIDTH = canvas.width = canvas.parentElement!.clientWidth;
-    const HEIGHT = canvas.height = canvas.parentElement!.clientHeight;
+    const WIDTH = (canvas.width = canvas.parentElement!.clientWidth);
+    const HEIGHT = (canvas.height = canvas.parentElement!.clientHeight);
     const NR_POINTS = 10;
     const CUTOFF_DISTANCE = 300;
 
@@ -20,10 +20,7 @@ const CanvasAnimation = () => {
       const x = Math.random() * WIDTH;
       const y = Math.random() * HEIGHT;
       points.push([x, y]);
-      directions.push([
-        Math.random() * 2 - 1,
-        Math.random() * 2 - 1
-      ]);
+      directions.push([Math.random() * 2 - 1, Math.random() * 2 - 1]);
     }
 
     const draw = () => {
@@ -47,7 +44,7 @@ const CanvasAnimation = () => {
 
         ctx.beginPath();
         ctx.arc(x, y, 5, 0, 2 * Math.PI);
-        ctx.fillStyle = '#555';
+        ctx.fillStyle = "#555";
         ctx.fill();
       }
 
@@ -55,7 +52,7 @@ const CanvasAnimation = () => {
         for (let j = i + 1; j < NR_POINTS; j++) {
           const distance = Math.sqrt(
             Math.pow(points[i][0] - points[j][0], 2) +
-            Math.pow(points[i][1] - points[j][1], 2)
+              Math.pow(points[i][1] - points[j][1], 2),
           );
 
           if (distance < CUTOFF_DISTANCE) {

@@ -7,7 +7,7 @@ Care este cel mai mare exponent \`k\` astfel încât \`$$12^k$$\` divide număru
 `,
   variante: ["8", "25", "33", "48", "97"],
   raspuns: "48",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_2: ProblemaType = {
@@ -21,7 +21,7 @@ Suma tuturor elementelor din matricea A este egală cu:
 `,
   variante: ["285", "385", "500", "550", "715"],
   raspuns: "385",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_3: ProblemaType = {
@@ -42,7 +42,7 @@ Cu cât este egal \`f(2022)\`?
 `,
   variante: ["64", "128", "256", "512", "1024"],
   raspuns: "64",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_4: ProblemaType = {
@@ -58,7 +58,7 @@ Care este probabilitatea, ca numerele de la \`1150\` la \`1250\` să fie în con
 `,
   variante: ["1", "1/2", "1/99", "1/100", "99/10100"],
   raspuns: "1/100",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_5: ProblemaType = {
@@ -81,7 +81,7 @@ Care este numărul de elemente al submulțimii de produs maxim din A?
 `,
   variante: ["9", "13", "14", "15", "18"],
   raspuns: "15",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_6: ProblemaType = {
@@ -96,7 +96,7 @@ Cât durează cel mai rapid traseu de la orașul \`12\` la orașul \`72\`?
 `,
   variante: ["29", "30", "34", "35", "38"],
   raspuns: "34",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_7: ProblemaType = {
@@ -110,7 +110,7 @@ Considerând toate matricele cu o asemenea proprietate, care este numărul minim
 `,
   variante: ["2022", "511566", "510555", "1021110", "1022121"],
   raspuns: "1022121",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_8: ProblemaType = {
@@ -123,7 +123,7 @@ Ultima cifră a numărului urmator este:
 `,
   variante: ["0", "1", "3", "5", "9"],
   raspuns: "5",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_9: ProblemaType = {
@@ -133,7 +133,7 @@ Câte numere Fibonacci sunt în intervalul închis \`[1234567890, 9876543210]\`?
 `,
   variante: ["1", "2", "4", "8", "16"],
   raspuns: "4",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_10: ProblemaType = {
@@ -153,7 +153,7 @@ Care este numărul ciclurilor distincte de lungime 3 din graful G?
 `,
   variante: ["0", "1", "27", "64", "125"],
   raspuns: "0",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_11: ProblemaType = {
@@ -171,7 +171,7 @@ Numărul de conexiuni care trebuie realizate între toate cele \`14052022\` de c
 `,
   variante: ["233442104", "226416093", "219390082", "205338061", "248511938"],
   raspuns: "219390082",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_12: ProblemaType = {
@@ -187,7 +187,7 @@ Care este numărul minim de salturi necesare lui Alex pentru a ajunge la poziți
 `,
   variante: ["7", "8", "9", "10", "11"],
   raspuns: "8",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_13: ProblemaType = {
@@ -204,7 +204,7 @@ De exemplu:
 `,
   variante: ["2", "3", "4", "5", "6"],
   raspuns: "3",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_14: ProblemaType = {
@@ -228,7 +228,7 @@ Câte numere distincte de 3 cifre se pot forma cu cele 3 zaruri?
 `,
   variante: ["125", "317", "499", "521", "729"],
   raspuns: "521",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_15: ProblemaType = {
@@ -238,7 +238,7 @@ Pentru care din următoarele valori ale lui \`n\` există o alegere de semne plu
 `,
   variante: ["2021", "2022", "2023", "2025", "2026"],
   raspuns: "2023",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_16: ProblemaType = {
@@ -264,7 +264,7 @@ Care va fi valoarea expresiei \`h(14052022, 23, 0)\`?
 `,
   variante: ["14", "23", "2022", "610957", "14051999"],
   raspuns: "23",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_17: ProblemaType = {
@@ -290,7 +290,7 @@ Care dintre următoarele numere va fi afișat la un moment dat ca urmare a apelu
 `,
   variante: ["361", "5051", "1787", "53411", "41"],
   raspuns: "361",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_18: ProblemaType = {
@@ -305,9 +305,20 @@ Vrem să folosim unele dintre aceste bețe (posibil toate) pentru a construi con
 
 Câte arii distincte posibile poate avea un asemenea triunghi?
 `,
-  variante: ["8193", "22", "55558", "11495", "105693", "234126", "17293", "16639", "132", "49763"],
+  variante: [
+    "8193",
+    "22",
+    "55558",
+    "11495",
+    "105693",
+    "234126",
+    "17293",
+    "16639",
+    "132",
+    "49763",
+  ],
   raspuns: "16639",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_19: ProblemaType = {
@@ -320,9 +331,20 @@ Fie \`S\` suma tuturor elementelor tuturor submulțimilor cu \`617\` elemente al
 
 Câte cifre are S?
 `,
-  variante: ["325", "376", "392", "404", "415", "427", "440", "455", "467", "489"],
+  variante: [
+    "325",
+    "376",
+    "392",
+    "404",
+    "415",
+    "427",
+    "440",
+    "455",
+    "467",
+    "489",
+  ],
   raspuns: "404",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_20: ProblemaType = {
@@ -347,9 +369,20 @@ Azi am putut in sfarsit ca din intamplare sa vizitez muzeul cunoscut al satului:
 
 Câte apariții ale cuvântului \`picat\` există în această postare?
 `,
-  variante: ["665", "714", "1923", "2154", "1315", "1276", "956", "1672", "1024", "1948"],
+  variante: [
+    "665",
+    "714",
+    "1923",
+    "2154",
+    "1315",
+    "1276",
+    "956",
+    "1672",
+    "1024",
+    "1948",
+  ],
   raspuns: "1672",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const editia_2022: EditionType = {
@@ -374,7 +407,7 @@ const editia_2022: EditionType = {
     problema_17,
     problema_18,
     problema_19,
-    problema_20
+    problema_20,
   ],
   pdf_etapa_1_link: "./pdfs/2022-etapa-I-A.pdf",
   pdf_etapa_2_link: [
@@ -382,7 +415,7 @@ const editia_2022: EditionType = {
     "./pdfs/2022-cazane.pdf",
     "./pdfs/2022-tren.pdf",
     "./pdfs/2022-vopsea.pdf",
-  ]
-}
+  ],
+};
 
 export { editia_2022 };

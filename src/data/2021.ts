@@ -7,7 +7,7 @@ Care este ultima cifră a celui mai mare număr de 7 cifre, divizibil cu 7, care
 `,
   variante: ["0", "2", "3", "5", "6"],
   raspuns: "0",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_2: ProblemaType = {
@@ -19,9 +19,15 @@ Notații:
  * \`$$\\lceil a\\rceil$$\` reprezintă partea întreagă superioară a numărului real \`a\`, spre exemplu \`$$\\lceil 2.8\\rceil = 3$$\`.
  * \`[n / k]\` reprezintă câtul împărțirii lui \`n\` la \`k\` și \`n mod k\` reprezintă restul împărțirii lui \`n\` la \`k\`).
 `,
-  variante: ["[n / k]", "[(n+k) / k]", "[(n+k-1) / k]", "[n / (k-1)]", "[n / k] + (n mod k)"],
+  variante: [
+    "[n / k]",
+    "[(n+k) / k]",
+    "[(n+k-1) / k]",
+    "[n / (k-1)]",
+    "[n / k] + (n mod k)",
+  ],
   raspuns: "[(n+k-1) / k]",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_3: ProblemaType = {
@@ -65,9 +71,15 @@ Definiții:
  * 
 Presupunând că tabloul \`t\` este format din \`n\` numere ordonate crescător, precizați ce returnează \`f(t, n)\`:
 `,
-  variante: ["numărul valorilor distincte din tabloul t", "lungimea maximă a unei subsecvențe din tabloul t formată din valori egale", "numărul subsecvențelor strict crescătoare din tabloul t", "lungimea maximă a unui subșir din tabloul t format din valori egale", "numărul valorilor care se repetă de cel puțin două ori din tabloul t"],
+  variante: [
+    "numărul valorilor distincte din tabloul t",
+    "lungimea maximă a unei subsecvențe din tabloul t formată din valori egale",
+    "numărul subsecvențelor strict crescătoare din tabloul t",
+    "lungimea maximă a unui subșir din tabloul t format din valori egale",
+    "numărul valorilor care se repetă de cel puțin două ori din tabloul t",
+  ],
   raspuns: "numărul valorilor distincte din tabloul t",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_4: ProblemaType = {
@@ -79,7 +91,7 @@ const problema_4: ProblemaType = {
 `,
   variante: ["4801", "4802", "4803", "6790", "6791"],
   raspuns: "6791",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_5: ProblemaType = {
@@ -92,7 +104,7 @@ Numărul de arbori parțiali ai grafului de mai jos este egal cu:
   variante: ["12", "11", "9", "15", "16"],
   raspuns: "11",
   dificultate: "usor",
-  imagine: "./images/2021-arbori-partiali.png"
+  imagine: "./images/2021-arbori-partiali.png",
 };
 
 const problema_6: ProblemaType = {
@@ -110,7 +122,7 @@ Fie \`X\` cel mai mare număr pseudo-palindrom mai mic sau egal cu \`1000465\`. 
 `,
   variante: ["36", "4", "1", "35", "25"],
   raspuns: "35",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_7: ProblemaType = {
@@ -130,7 +142,7 @@ Care este valoarea sumei \`M + A + R + E + T\`?
 `,
   variante: ["21", "7", "16", "18", "30"],
   raspuns: "18",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_8: ProblemaType = {
@@ -148,7 +160,7 @@ Care este suma maximă a lungimilor creioanelor pe care o poate obține Ionel, d
 `,
   variante: ["46", "50", "54", "56", "62"],
   raspuns: "54",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_9: ProblemaType = {
@@ -162,7 +174,7 @@ Care este cardinalul maxim al unei submulțimi 13-libere a mulțimii \`1, 2, 3, 
 `,
   variante: ["5", "4", "3", "6", "8"],
   raspuns: "5",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_10: ProblemaType = {
@@ -173,7 +185,7 @@ Care este restul împărțirii lui \`n\` la 37?
 `,
   variante: ["27", "4", "11", "15", "31"],
   raspuns: "15",
-  dificultate: "usor"
+  dificultate: "usor",
 };
 
 const problema_11: ProblemaType = {
@@ -194,7 +206,7 @@ Problema dată lui Cristian este de a găsi numărul minim de pași prin care se
 `,
   variante: ["64", "65", "66", "67", "68"],
   raspuns: "65",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_12: ProblemaType = {
@@ -214,7 +226,7 @@ Care este aria maximă de perete pe care o poate acoperi folosind posterele cump
 `,
   variante: ["93", "94", "95", "96", "97"],
   raspuns: "94",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_13: ProblemaType = {
@@ -228,10 +240,16 @@ Spre exemplu, pentru nivelul \`k = 5\` numerele din interiorul triunghiului crea
 
 Calculați suma numerelor din interiorul triunghiului care se oprește la nivelul \`k = 2021\`.
 `,
-  variante: ["2076403516157", "2080520640766", "2080520640767", "2084643884965", "2084643884966"],
+  variante: [
+    "2076403516157",
+    "2080520640766",
+    "2080520640767",
+    "2084643884965",
+    "2084643884966",
+  ],
   raspuns: "2080520640766",
   dificultate: "mediu",
-  imagine: "./images/2021-triunghi-infinit.png"
+  imagine: "./images/2021-triunghi-infinit.png",
 };
 
 const problema_14: ProblemaType = {
@@ -247,7 +265,7 @@ Vrem să plasăm un singur "domino" (piesă de mărime \`$$1 \\times 2$$\` sau \
 `,
   variante: ["1479", "1480", "1520", "2959", "3039"],
   raspuns: "2959",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_15: ProblemaType = {
@@ -269,7 +287,7 @@ Care este restul lui \`S_MIN\` la împărțirea cu 37?
 `,
   variante: ["13", "3", "8", "18", "23"],
   raspuns: "8",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_16: ProblemaType = {
@@ -292,7 +310,7 @@ Câte dreptunghiuri distincte sunt în figura următoare?
 `,
   variante: ["43", "44", "45", "46", "47"],
   raspuns: "43",
-  dificultate: "mediu"
+  dificultate: "mediu",
 };
 
 const problema_17: ProblemaType = {
@@ -306,9 +324,20 @@ Pe masă este scrisă ecuația \`a + b = c\`. După un cutremur masiv, s-au perm
 
 Care ar fi putut fi valoarea inițială a lui \`c\`?
 `,
-  variante: ["8739191", "3001892", "3072104", "3735094", "5790835", "7192195", "8952530", "15038950", "15111922", "15839920"],
+  variante: [
+    "8739191",
+    "3001892",
+    "3072104",
+    "3735094",
+    "5790835",
+    "7192195",
+    "8952530",
+    "15038950",
+    "15111922",
+    "15839920",
+  ],
   raspuns: "15111922",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_18: ProblemaType = {
@@ -324,9 +353,20 @@ Câte date între \`01.01.2021 00:00\` și \`31.12.2021 23:59\` (inclusiv) sunt 
 
 O dată este validă dacă ora este în intervalul \`[0, 23]\`, minutul în \`[0, 59]\`, luna în \`[1, 12]\`, ziua în intervalul corespunzător lunii respective conform calendarului anului 2021.
 `,
-  variante: ["27412", "29568", "35797", "37409", "44382", "44516", "46870", "512260", "525600", "535680"],
+  variante: [
+    "27412",
+    "29568",
+    "35797",
+    "37409",
+    "44382",
+    "44516",
+    "46870",
+    "512260",
+    "525600",
+    "535680",
+  ],
   raspuns: "44382",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_19: ProblemaType = {
@@ -350,9 +390,20 @@ Care este probabilitatea pentru copilul 2 să afle secretul cel târziu la sfâr
 
 _Alegeți varianta cea mai apropiată de răspunsul real._
 `,
-  variante: ["0%", "26%", "32%", "44%", "58%", "68%", "76%", "85%", "94%", "100%"],
+  variante: [
+    "0%",
+    "26%",
+    "32%",
+    "44%",
+    "58%",
+    "68%",
+    "76%",
+    "85%",
+    "94%",
+    "100%",
+  ],
   raspuns: "68%",
-  dificultate: "greu"
+  dificultate: "greu",
 };
 
 const problema_20: ProblemaType = {
@@ -372,11 +423,21 @@ Câte configurații de alegeri satisfac această cerință? Răspunsul este foar
 
 O configurație \`A\` diferă de o configurație \`B\` dacă există cel puțin un angajat care și-a ales un anumit interval în \`A\` și un interval diferit în \`B\`.
 `,
-  variante: ["82930407", "195773645", "231919841", "353129100", "371820425", "469187746", "715377483", "67843200", "802170567", "918401827"],
+  variante: [
+    "82930407",
+    "195773645",
+    "231919841",
+    "353129100",
+    "371820425",
+    "469187746",
+    "715377483",
+    "67843200",
+    "802170567",
+    "918401827",
+  ],
   raspuns: "195773645",
-  dificultate: "greu"
+  dificultate: "greu",
 };
-
 
 const editia_2021: EditionType = {
   name: "Ediția 2021",
@@ -400,15 +461,15 @@ const editia_2021: EditionType = {
     problema_17,
     problema_18,
     problema_19,
-    problema_20
+    problema_20,
   ],
   pdf_etapa_1_link: "./pdfs/2021-etapa-I.pdf",
   pdf_etapa_2_link: [
     "./pdfs/2021-grile.pdf",
     "./pdfs/2021-kscale.pdf",
     "./pdfs/2021-secretariat.pdf",
-    "./pdfs/2021-sort.pdf"
-  ]
-}
+    "./pdfs/2021-sort.pdf",
+  ],
+};
 
 export { editia_2021 };

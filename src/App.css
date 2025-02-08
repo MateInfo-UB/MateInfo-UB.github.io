@@ -1,0 +1,9 @@
+
+/* Make the markdown blocks transparent */
+.wmde-markdown {
+  background-color: transparent;
+}
+
+.bp5-vertical, .bp5-tab-list, .bp5-tab-indicator-wrapper {
+  width: 100% !important;
+}

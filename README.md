@@ -20,10 +20,9 @@ Aplicația nu are backend, toate datele sunt statice și sunt stocate în assetu
 
 Locații importante:
 
- * [Acest folder](public/images/) salveaza pozele incluse in problemele din etapa I a concursului.
- * [Acest folder](public/pdfs/) salveaza pdf-urile cu enunțurile etapelor concursurilor.
- * [Aici](src/data/) sunt stocate enunțurile problemelor date în etapa I a edițiilor anterioare.
-
+- [Acest folder](public/images/) salveaza pozele incluse in problemele din etapa I a concursului.
+- [Acest folder](public/pdfs/) salveaza pdf-urile cu enunțurile etapelor concursurilor.
+- [Aici](src/data/) sunt stocate enunțurile problemelor date în etapa I a edițiilor anterioare.
 
 ## Dezvoltare
 
@@ -39,8 +38,9 @@ Pentru a publica aplicația, este suficient sa dați push la cod pe branch-ul `m
 Pentru a renderiza elemente de markdown pentru enunțuri, folosim
 
 Pentru a adaugat LaTeX, folosim structura următoare (prima formulă este pentru inline, a doua pentru block):
+
 ```JS
-const source = `This is to display the 
+const source = `This is to display the
 \`$$c = \\pm\\sqrt{a^2 + b^2}$$\`
  in one line
 
