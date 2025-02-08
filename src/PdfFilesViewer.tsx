@@ -4,8 +4,6 @@ import { usePathQuery } from "./helpers";
 import { useState } from "react";
 
 const FileViewer = ({ pdfFile }: { pdfFile: string }) => {
-  // TODO: show all pdfs, not just one
-  // For now, due to pdf issues, show them as iframes
   return (
     <div
       style={{
