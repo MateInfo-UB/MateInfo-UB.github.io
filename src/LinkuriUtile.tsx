@@ -131,9 +131,9 @@ function LinkuriUtile() {
         <Card elevation={3} style={cardStyle}>
           <H3>Raportează o Problemă</H3>
           <p>
-            Această platformă nu este platforma pe care se desfășoară concursul,
-            ci există în scop educativ. Dacă găsiți o problemă (un bug), vă
-            rugăm să îl raportați la link-ul de mai jos (veți avea nevoie de un
+            Această platformă NU este platforma pe care se desfășoară concursul,
+            există doar în scop educativ. Dacă găsiți o problemă (un bug), vă
+            rugăm să o raportați la link-ul de mai jos (veți avea nevoie de un
             cont de Github).
           </p>
           <a
