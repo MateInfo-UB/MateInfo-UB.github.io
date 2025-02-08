@@ -12,4 +12,6 @@
 
 .bp5-progress-bar, .bp5-progress-meter {
   border-radius: 0 !important;
+  border-bottom-left-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
 }
