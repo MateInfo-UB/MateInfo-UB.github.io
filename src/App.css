@@ -9,3 +9,7 @@
 .bp5-tab-indicator-wrapper {
   width: 100% !important;
 }
+
+.bp5-progress-bar, .bp5-progress-meter {
+  border-radius: 0 !important;
+}
