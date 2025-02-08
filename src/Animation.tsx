@@ -1,5 +1,9 @@
 import { useEffect, useRef } from "react";
 
+function Clip(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
+}
+
 const CanvasAnimation = () => {
   const canvasRef = useRef(null);
   const requestRef = useRef<number | null>(null);
@@ -8,8 +12,8 @@ const CanvasAnimation = () => {
     const canvas = canvasRef.current as unknown as HTMLCanvasElement;
     const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-    const WIDTH = (canvas.width = canvas.parentElement!.clientWidth);
-    const HEIGHT = (canvas.height = canvas.parentElement!.clientHeight);
+    const INITIAL_WIDTH = (canvas.width = canvas.parentElement!.clientWidth);
+    const INITIAL_HEIGHT = (canvas.height = canvas.parentElement!.clientHeight);
     const NR_POINTS = 10;
     const CUTOFF_DISTANCE = 300;
 
@@ -17,13 +21,15 @@ const CanvasAnimation = () => {
     const directions: number[][] = [];
 
     for (let i = 0; i < NR_POINTS; i++) {
-      const x = Math.random() * WIDTH;
-      const y = Math.random() * HEIGHT;
+      const x = Math.random() * INITIAL_WIDTH;
+      const y = Math.random() * INITIAL_HEIGHT;
       points.push([x, y]);
       directions.push([Math.random() * 2 - 1, Math.random() * 2 - 1]);
     }
 
     const draw = () => {
+      const WIDTH = (canvas.width = canvas.parentElement!.clientWidth);
+      const HEIGHT = (canvas.height = canvas.parentElement!.clientHeight);
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
       for (let i = 0; i < NR_POINTS; i++) {
         let [x, y] = points[i];
@@ -31,9 +37,11 @@ const CanvasAnimation = () => {
 
         if (x < 0 || x > WIDTH) {
           dx = -dx;
+          x = Clip(x, 0, WIDTH);
         }
         if (y < 0 || y > HEIGHT) {
           dy = -dy;
+          y = Clip(y, 0, HEIGHT);
         }
 
         x += dx;
