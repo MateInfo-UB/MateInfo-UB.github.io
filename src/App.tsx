@@ -9,6 +9,7 @@ import { LinkuriUtile } from "./LinkuriUtile";
 import { HashHistory } from "history";
 
 import "./App.css";
+import { ToateDatele } from "./ToateDatele";
 
 function Home() {
   const cardStyle: React.CSSProperties = {
@@ -122,7 +123,7 @@ function App({ history }: { history: HashHistory }) {
             <Link to="/simulari" style={linkStyle}>
               <Button
                 className="bp5-minimal"
-                icon="code"
+                icon="learning"
                 text="Simulări Etapa I"
                 style={buttonStyle}
                 active={location.pathname === "/simulari"}
@@ -153,6 +154,15 @@ function App({ history }: { history: HashHistory }) {
                 text="Linkuri Utile"
                 style={buttonStyle}
                 active={location.pathname === "/linkuri"}
+              />
+            </Link>
+            <Link to="/toate-datele" style={linkStyle}>
+              <Button
+                className="bp5-minimal"
+                icon="code"
+                text="Date JSON"
+                style={buttonStyle}
+                active={location.pathname === "/toate-datele"}
               />
             </Link>
           </Navbar.Group>
@@ -223,6 +233,7 @@ function App({ history }: { history: HashHistory }) {
           <Route path="/etapa-I/" element={<PdfFilesViewer etapa="I" />} />
           <Route path="/etapa-II/" element={<PdfFilesViewer etapa="II" />} />
           <Route path="/linkuri" element={<LinkuriUtile />} />
+          <Route path="/toate-datele" element={<ToateDatele />} />
         </Routes>
       </div>
     </div>

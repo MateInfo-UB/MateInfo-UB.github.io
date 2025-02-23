@@ -57,9 +57,10 @@ const ProblemViewer = ({
                 />
               );
             }
-            // eslint-disable-next-line react/prop-types
             const code =
+              // eslint-disable-next-line react/prop-types
               props.node && props.node.children
+                // eslint-disable-next-line react/prop-types
                 ? getCodeString(props.node.children)
                 : children;
             if (
@@ -129,20 +130,20 @@ const ProblemViewer = ({
               label={
                 varianta.toString() +
                 (isInReviewMode &&
-                varianta.toString() === problem.raspuns.toString()
+                  varianta.toString() === problem.raspuns.toString()
                   ? " (corect)"
                   : "")
               }
               onClick={() => setPickedAnswer(varianta.toString())}
               // disabled={isInReviewMode}
               checked={pickedAnswer === varianta.toString()}
-              onChange={() => {}}
+              onChange={() => { }}
               style={{
                 paddingLeft: "30px",
                 paddingRight: "30px",
                 fontWeight:
                   isInReviewMode &&
-                  varianta.toString() === problem.raspuns.toString()
+                    varianta.toString() === problem.raspuns.toString()
                     ? "bold"
                     : "normal",
               }}
