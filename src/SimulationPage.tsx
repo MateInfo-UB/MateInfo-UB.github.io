@@ -201,7 +201,7 @@ const SimulationPage = ({ history }: { history: History }) => {
               width: "30%",
             }}
           >
-            Oprește
+            Corectează
           </Button>
 
           <Button
