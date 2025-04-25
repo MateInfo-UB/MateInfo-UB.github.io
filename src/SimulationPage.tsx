@@ -10,7 +10,7 @@ import {
 import { editii } from "./data";
 import { ProblemViewer } from "./ProblemViewer";
 import { useTimer } from "react-timer-hook";
-import { ProblemaType, ScoreOfProblem } from "./types";
+import { EditionType, ProblemaType, ScoreOfProblem } from "./types";
 import { useNavigate, useLocation } from "react-router-dom";
 import { usePathQuery } from "./helpers";
 import { History } from "history";
@@ -29,6 +29,41 @@ const ComputeScore = (
   }
   return `${score} / ${total_score}`;
 };
+
+const ComputeRanking = ({
+  problemAnswers,
+  edition
+}: {
+  problemAnswers: string[];
+  edition: EditionType;
+}) => {
+  // No data for this edition.
+  if (!edition.punctaje) {
+    return <></>
+  }
+
+  let score = 0;
+  for (let i = 0; i < edition.probleme.length; i++) {
+    if (problemAnswers[i] == edition.probleme[i].raspuns) {
+      score += ScoreOfProblem(edition.probleme[i]);
+    }
+  }
+
+  // Not enough for qualifying.
+  if (score < Math.min(...edition.punctaje)) {
+    return <p>Nu ai luat punctajul necesar pentru a te califica.</p>
+  }
+
+  // Find the ranking (i.e. the number of students with a higher score).
+  const ranking = edition.punctaje.filter((x) => x > score).length + 1;
+
+  return (
+    <p>
+      Te-ai calificat la etapa II pe poziția {ranking}!
+    </p>
+  );
+}
+
 
 const contestDurationInSeconds = 2 * 60 * 60;
 
@@ -301,6 +336,10 @@ const SimulationPage = ({ history }: { history: History }) => {
                   Scor:{" "}
                   <strong>{ComputeScore(problemAnswers, problems)}</strong>
                 </p>
+                <ComputeRanking
+                  problemAnswers={problemAnswers}
+                  edition={edition}
+                />
               </div>
             )}
           </div>

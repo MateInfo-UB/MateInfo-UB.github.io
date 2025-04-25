@@ -18,6 +18,8 @@ interface EditionType {
   pdf_etapa_1_link?: string | string[];
   pdf_etapa_2_link?: string | string[];
   probleme: ProblemaType[];
+  // Points obtained by students qualifying for the final
+  punctaje?: number[];
 }
 
 const ScoreOfProblem = (problem: ProblemaType): number => {
