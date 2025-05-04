@@ -156,15 +156,6 @@ function App({ history }: { history: HashHistory }) {
                 active={location.pathname === "/linkuri"}
               />
             </Link>
-            <Link to="/toate-datele" style={linkStyle}>
-              <Button
-                className="bp5-minimal"
-                icon="code"
-                text="Date JSON"
-                style={buttonStyle}
-                active={location.pathname === "/toate-datele"}
-              />
-            </Link>
           </Navbar.Group>
           <div
             style={{
