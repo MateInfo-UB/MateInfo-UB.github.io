@@ -69,7 +69,7 @@ const contestDurationInSeconds = 2 * 60 * 60;
 
 const SimulationPage = ({ history }: { history: History }) => {
   const { getPathQuery, setPathQuery } = usePathQuery();
-  const allEditions = editii;
+  const allEditions = editii.filter((edition) => edition.probleme.length > 0);
   const navigate = useNavigate();
   const location = useLocation();
   const [editionId, setEditionIdInternal] = useState(
