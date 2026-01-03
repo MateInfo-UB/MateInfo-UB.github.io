@@ -51,7 +51,7 @@ const ComputeRanking = ({
 
   // Not enough for qualifying.
   if (score < Math.min(...edition.punctaje)) {
-    return <p>Nu ai luat punctajul necesar pentru a te califica.</p>
+    return <p>Nu ai fi luat punctajul necesar pentru a te califica.</p>
   }
 
   // Find the ranking (i.e. the number of students with a higher score).
@@ -59,7 +59,7 @@ const ComputeRanking = ({
 
   return (
     <p>
-      Te-ai calificat la etapa II pe poziția {ranking}!
+      Te-ai fi calificat la etapa II pe poziția {ranking}.
     </p>
   );
 }
