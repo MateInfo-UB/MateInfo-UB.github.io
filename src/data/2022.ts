@@ -122,7 +122,7 @@ Ultima cifră a numărului urmator este:
 \`\`\`
 `,
   variante: ["0", "1", "3", "5", "9"],
-  raspuns: "5",
+  raspuns: "9",
   dificultate: "usor",
 };
 
